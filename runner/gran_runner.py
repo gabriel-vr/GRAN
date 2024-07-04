@@ -256,7 +256,7 @@ class GranRunner(object):
         avg_train_loss /= float(self.dataset_conf.num_fwd_pass)
         
         # reduce
-        train_loss = float(avg_train_loss.data.cpu().numpy())
+        train_loss = float(avg_train_loss)
         
         self.writer.add_scalar('train_loss', train_loss, iter_count)
         results['train_loss'] += [train_loss]

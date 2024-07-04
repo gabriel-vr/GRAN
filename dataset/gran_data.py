@@ -58,7 +58,7 @@ class GRANData(object):
   def _get_graph_data(self, G):
     node_degree_list = [(n, d) for n, d in G.degree()]
 
-    adj_0 = np.array(nx.to_numpy_matrix(G))
+    adj_0 = np.array(nx.to_numpy_array(G))
 
     ### Degree descent ranking
     # N.B.: largest-degree node may not be unique
