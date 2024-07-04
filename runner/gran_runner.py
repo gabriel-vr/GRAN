@@ -222,7 +222,7 @@ class GranRunner(object):
         batch_data = []
         if self.use_gpu:
           for _ in self.gpus:
-            data = train_iterator.next()
+            data = next(train_iterator)
             batch_data.append(data)
             iter_count += 1
         
