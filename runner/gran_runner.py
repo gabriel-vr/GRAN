@@ -102,7 +102,7 @@ class GranRunner(object):
     self.num_gpus = len(self.gpus)
     self.is_shuffle = False
 
-    #assert self.use_gpu == True
+    assert self.use_gpu == True
 
     if self.train_conf.is_resume:
       self.config.save_dir = self.train_conf.resume_dir
