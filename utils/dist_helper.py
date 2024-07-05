@@ -135,9 +135,12 @@ def disc(samples1, samples2, kernel, is_parallel=True, *args, **kwargs):
           (s1, samples2, partial(kernel, *args, **kwargs)) for s1 in samples1
       ]):
         d += dist
-
-  d /= len(samples1) * len(samples2)
-  return d
+  n = len(samples1) * len(samples2)
+  if n == 0:
+    return float("inf")
+  else:
+    d /= n
+    return d
 
 
 def compute_mmd(samples1, samples2, kernel, is_hist=True, *args, **kwargs):
