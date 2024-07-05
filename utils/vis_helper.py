@@ -89,8 +89,7 @@ def draw_graph_list_separate(G_list,
           node_size=node_size,
           node_color='#336699',
           alpha=1,
-          linewidths=0,
-          font_size=0)
+          linewidths=0)
       nx.draw_networkx_edges(G, pos, alpha=alpha, width=width)
     else:
       nx.draw_networkx_nodes(
@@ -99,9 +98,10 @@ def draw_graph_list_separate(G_list,
           node_size=1.5,
           node_color='#336699',
           alpha=1,
-          linewidths=0.2,
-          font_size=1.5)
+          linewidths=0.2)
       nx.draw_networkx_edges(G, pos, alpha=0.3, width=0.2)
+    nx.draw_networkx_labels(G, pos=pos, font_size=0)
+
 
     plt.draw()
     plt.tight_layout()
