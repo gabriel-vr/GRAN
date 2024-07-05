@@ -41,8 +41,7 @@ def get_config(config_file, exp_dir=None, is_test=False):
   # create hyper parameters
   config.run_id = str(os.getpid())
   config.exp_name = '_'.join([
-      config.model.name, config.dataset.name,
-      time.strftime('%Y-%b-%d-%H-%M-%S'), config.run_id
+      config.model.name, config.dataset.name
   ])
 
   if exp_dir is not None:
